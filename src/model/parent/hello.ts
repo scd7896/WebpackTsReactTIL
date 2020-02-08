@@ -1,4 +1,4 @@
 export interface HelloProps {
-    readonly compiler? : string;
-    readonly framework : string;
+    readonly compiler?: string;
+    readonly framework: string;
 }

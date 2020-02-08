@@ -1,33 +1,34 @@
 module.exports = {
-    mode : 'production',
-    devtool : 'source-map',
-    entry : {
-        first : './src/pages/test',
-        second : './src/pages/test2'
+    mode: "production",
+    devtool: "source-map",
+    entry: {
+        first: "./src/pages/test",
+        second: "./src/pages/test2"
     },
-    resolve :{
+    resolve: {
         extensions: [".ts", ".tsx"]
     },
 
-    module : {
-        rules : [
+    module: {
+        rules: [
             {
-                test : /\.ts(x?)$/,
-                exclude : '/node_modules/',
-                use : [
+                test: /\.ts(x?)$/,
+                exclude: "/node_modules/",
+                use: [
                     {
-                        loader: 'ts-loader'
+                        loader: "ts-loader"
                     }
-                ]    
-            },{
-                enforce : 'pre',
-                test : /\.js(x?)$/,
-                loader : 'source-map'
+                ]
+            },
+            {
+                enforce: "pre",
+                test: /\.js(x?)$/,
+                loader: "source-map"
             }
-            
         ]
-    }, externals : {
-        "react" :"React",
-        "react-dom" : "ReactDOM"
+    },
+    externals: {
+        react: "React",
+        "react-dom": "ReactDOM"
     }
-}
+};
