@@ -1,12 +1,11 @@
 module.exports = {
-    mode: "production",
-    devtool: "source-map",
+    mode: "development", devtool: "inline-source-map",
     entry: {
         first: "./src/pages/test",
         second: "./src/pages/test2"
     },
     resolve: {
-        extensions: [".ts", ".tsx"]
+        extensions: [".ts", ".tsx", ".js", ".css", ".scss"]
     },
 
     module: {
@@ -15,20 +14,38 @@ module.exports = {
                 test: /\.ts(x?)$/,
                 exclude: "/node_modules/",
                 use: [
-                    {
-                        loader: "ts-loader"
-                    }
+                    "ts-loader",
                 ]
             },
             {
-                enforce: "pre",
-                test: /\.js(x?)$/,
-                loader: "source-map"
-            }
+                test: /\.scss$/,
+                
+                use: [
+                    {
+                        loader: "style-loader"
+                    },
+                    { 
+                        loader: "css-modules-typescript-loader"
+                    },
+                    {
+                        loader: "css-loader",
+                        options: {
+                            modules: true
+                        }
+                    },
+                    {
+                        loader: "sass-loader"
+                    }     
+                ]
+            },
         ]
     },
     externals: {
         react: "React",
         "react-dom": "ReactDOM"
+    },
+    output: {
+        filename: "[name].js",
+        path: __dirname+'/dist'
     }
 };
