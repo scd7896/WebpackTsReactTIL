@@ -1,4 +1,5 @@
 import * as React from "react";
+import Hello2 from "./Hello2";
 import { HelloProps } from "../../model/parent/hello";
 import * as styles from './Hello.scss'; 
 
@@ -13,6 +14,7 @@ const Hello = (props: HelloProps) => {
             <div>
                 불필요한거 삭제 했음
             </div>
+            <Hello2 />
         </div>
     );
 };
