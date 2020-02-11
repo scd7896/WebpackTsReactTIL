@@ -4,4 +4,8 @@
 
 .hello2{
     font-weight: bold;
+
+    &-text{
+        color: blue;
+    }
 }
