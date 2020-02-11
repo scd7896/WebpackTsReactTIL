@@ -16,6 +16,9 @@ app.get('/second', (req, res)=>{
     return res.render('second')
 })
 
+app.get('/third', (req, res)=>{
+    return res.render('index');
+})
 
 // Serve the files on port 3000.
 app.listen(4500, function () {

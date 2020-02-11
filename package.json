@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
+    "dev": "webpack",
     "watch": "webpack --watch",
-    "server": "node server.js"
+    "server": "node server.js",
+    "start": "nodemon --watch src server.js"
   },
   "author": "",
   "license": "ISC",
@@ -38,6 +39,7 @@
     "dotenv": "^8.2.0",
     "ejs": "^3.0.1",
     "html": "^1.0.0",
+    "nodemon": "^2.0.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   }

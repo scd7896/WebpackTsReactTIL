@@ -1,0 +1,9 @@
+{
+    "watch":[
+        "./server.js",
+        "nodemon.json",
+        "src"
+    ],
+    "exec": "npm run dev && npm run server",
+    "ext": "js json jsx ts tsx scss"
+}
