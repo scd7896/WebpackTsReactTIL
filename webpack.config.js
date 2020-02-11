@@ -1,6 +1,5 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+
 module.exports = {
     mode: "development", devtool: "inline-source-map",
     entry: {
@@ -14,10 +13,13 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.js$/,
+                loader: "source-map-loader"
+            },
+            {
                 test: /\.ts(x?)$/,
-                exclude: "/node_modules/",
                 use: [
-                    "ts-loader",
+                    "awesome-typescript-loader",
                 ]
             },
             {
