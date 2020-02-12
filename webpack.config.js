@@ -14,7 +14,7 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                loader: "source-map-loader"
+                loader: 'babel-loader',
             },
             {
                 test: /\.ts(x?)$/,
