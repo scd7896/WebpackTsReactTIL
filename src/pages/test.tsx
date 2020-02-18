@@ -2,7 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import Hello from "../components/atomic/Hello";
-import { HelloProps } from "../model/parent/hello";
+import { HelloProps } from "../model/parent";
 
 const testFun = (arguement: HelloProps): HelloProps => {
     console.log(arguement.compiler);
