@@ -3,39 +3,34 @@ import { CanvasProps, UserData } from "../../../model/parent";
 import { useEffect } from "react";
 
 const Canvas = (props: CanvasProps) => {
-    const { howMany, UserDatas } = props;
+    const { howMany, UserDatas, colors } = props;
     useEffect(() => {
         const canvasDom: HTMLCanvasElement = document.getElementById("canvas_test") as HTMLCanvasElement;
         const ctx = canvasDom.getContext("2d");
-
         const resizeCtx = () => {
             ctx.canvas.width = window.innerWidth;
-            for (let i = 0; i < howMany; i++) {
-                ctx.fillStyle = `#00${i * 2}000`;
-                ctx.fillRect(i * 100, i * 100, 40, 40);
-            }
-        };
-
-        // resizeCtx();
-        let currentX =0;
-        let currentY =0;
-        UserDatas.map((UserData : UserData)=>{
-            const first = UserData.counts[0]
-            ctx.moveTo(10, 300-first);
-            ctx.strokeStyle="#"+Math.round( Math.random() * 0xFFFFFF ).toString(16);
-            UserData.counts.map((count : number, index: number)=>{
-                console.log(count)
-                ctx.lineTo((index*30)+10, 300-count)
+            UserDatas.map((UserData : UserData)=>{
+                const first = UserData.counts[0]
+                ctx.moveTo(10, 300-first);
+                ctx.strokeStyle="#"+Math.round( Math.random() * 0xFFFFFF ).toString(16);
+                UserData.counts.map((count : number, index: number)=>{
+                    console.log(count)
+                    ctx.lineTo((index*60)+10, 300-count);
+                    ctx.arc((index*60)+10, 300-count,1,0,2*Math.PI, false);
+                    
+                })
+                ctx.stroke();
             })
-            ctx.stroke();
-        })
-        
+        };
+        resizeCtx();
         window.addEventListener("resize", resizeCtx);
         // return window.removeEventListener('resize', resizeCtx)
     }, []);
     return (
         <div style={{ width: "100%", backgroundColor: "#ffffff" }}>
-            <canvas id="canvas_test" height="700px"></canvas>
+            <canvas id="canvas_test" height="700px">
+                캔버스 안에서는 어디에 글이 써지나요?
+            </canvas>
         </div>
     );
 };

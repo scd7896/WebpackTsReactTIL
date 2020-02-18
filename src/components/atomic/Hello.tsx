@@ -12,7 +12,7 @@ const users: Array<UserData> = [
         counts: [10, 30, 40, 20, 50]
     },
     {
-        name: "김철수",
+        name: "김영지",
         counts: [40, 10, 20, 30, 40]
     }
 ];

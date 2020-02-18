@@ -5,6 +5,7 @@ export interface UserData {
 export interface CanvasProps {
     readonly howMany?: number;
     readonly UserDatas: Array<UserData>;
+    readonly colors?: Array<string>;
 }
 
 export interface HelloProps {
