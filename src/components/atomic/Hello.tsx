@@ -10,7 +10,7 @@ import { test } from "./JsComponent/test.js";
 const users: Array<UserData> = [
     {
         name: "김철수",
-        counts: [10, 30, 40, 20, 50]
+        counts: [40, 20, 10, 30, 80]
     },
     {
         name: "김영지",
