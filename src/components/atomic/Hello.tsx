@@ -3,6 +3,7 @@ import Hello2 from "./Hello2";
 import JsComponent from "./JsComponent";
 import Canvas from "./Canvas";
 import { HelloProps, UserData } from "../../model/parent";
+import CanvasWrapper from '../container/CanvasWrapper';
 import "./Hello.scss";
 import { test } from "./JsComponent/test.js";
 
@@ -26,7 +27,9 @@ const Hello = (props: HelloProps) => {
             <div className="hello2-text">불필요한거 삭제 했음</div>
             <Hello2 />
             <JsComponent />
-            <Canvas howMany={4} UserDatas={users} />
+            <CanvasWrapper>
+                <Canvas howMany={4} UserDatas={users} />
+            </CanvasWrapper>
         </div>
     );
 };

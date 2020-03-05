@@ -6,6 +6,7 @@ const Canvas = (props: CanvasProps) => {
     const { howMany, UserDatas, colors } = props;
     useEffect(() => {
         const canvasDom: HTMLCanvasElement = document.getElementById("canvas_test") as HTMLCanvasElement;
+        canvasDom.innerHTML = ``;
         const ctx = canvasDom.getContext("2d");
         const resizeCtx = () => {
             ctx.canvas.width = window.innerWidth;
@@ -28,7 +29,7 @@ const Canvas = (props: CanvasProps) => {
     }, []);
     return (
         <div style={{ width: "100%", backgroundColor: "#ffffff" }}>
-            <canvas id="canvas_test" height="700px">
+            <canvas id="canvas_test" height="400px">
                 캔버스 안에서는 어디에 글이 써지나요?
             </canvas>
         </div>
