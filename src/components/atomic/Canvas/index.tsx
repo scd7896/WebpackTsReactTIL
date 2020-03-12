@@ -6,11 +6,9 @@ const Canvas = (props: CanvasProps) => {
     const { howMany, UserDatas, colors } = props;
     useEffect(() => {
         const canvasDom: HTMLCanvasElement = document.getElementById("canvas_test") as HTMLCanvasElement;
-        canvasDom.innerHTML = ``;
         const ctx = canvasDom.getContext("2d");
         const resizeCtx = () => {
             ctx.canvas.width = window.innerWidth;
-            ctx.clearRect(0,0, canvasDom.width, canvasDom.height);
             UserDatas.map((UserData : UserData)=>{
                 const first = UserData.counts[0]
                 ctx.moveTo(10, 300-first);
@@ -18,7 +16,7 @@ const Canvas = (props: CanvasProps) => {
                 UserData.counts.map((count : number, index: number)=>{
                     console.log(count)
                     ctx.lineTo((index*60)+10, 300-count);
-                    ctx.arc((index*60)+10, 300-count,1,0,3*Math.PI, false);
+                    ctx.arc((index*60)+10, 300-count,1,0,2*Math.PI, false);
                     
                 })
                 ctx.stroke();
@@ -30,7 +28,7 @@ const Canvas = (props: CanvasProps) => {
     }, []);
     return (
         <div style={{ width: "100%", backgroundColor: "#ffffff" }}>
-            <canvas id="canvas_test" height="400px">
+            <canvas id="canvas_test" height="700px">
                 캔버스 안에서는 어디에 글이 써지나요?
             </canvas>
         </div>
