@@ -5,7 +5,11 @@
         <title>Hello React!</title>
     </head>
     <body>
-        <div id="root"></div>
+        <div id="root"
+            data-test="데이터셋 테스트"
+            data-arrTest='<%= arrDataset %>'
+            data-objTest='<%= objDataset %>'
+        ></div>
         <!-- Main -->
         <script src= '<%= process.env.HOST_URL %>/static/test.js'></script>
     </body>

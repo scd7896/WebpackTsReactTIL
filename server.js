@@ -11,7 +11,16 @@ app.set('view engine', 'ejs');
  * 화면을 뿌려주는 심플한 라우터들 
  */
 app.get('/', (req, res)=>{
-    return res.render('index');
+    const obj = {
+        hello : 'world',
+        kimserver : {
+            kim: "server"
+        }
+    }
+    return res.render('index', {
+        arrDataset: [1,2,3,4,5],
+        objDataset: JSON.stringify(obj)
+    });
 })
 
 app.get('/second', (req, res)=>{

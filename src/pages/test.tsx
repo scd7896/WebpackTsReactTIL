@@ -24,5 +24,6 @@ const res: HelloProps = testFun({
     compiler: "컴파일링",
     framework: "프레임워크이다"
 });
-console.log(res);
-ReactDOM.render(<Hello framework="프레임워크다" />, document.getElementById("root"));
+const root = document.getElementById("root");
+console.log(JSON.parse(root.dataset.objtest));
+ReactDOM.render(<Hello framework="프레임워크다" />, root);
