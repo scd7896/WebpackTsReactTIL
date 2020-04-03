@@ -1,4 +1,5 @@
 import * as React from "react";
+import * as Kimserver from 'kimserver-test-1'
 import Hello2 from "./Hello2";
 import JsComponent from "./JsComponent";
 import Canvas from "./Canvas";
@@ -18,15 +19,28 @@ const users: Array<UserData> = [
 ];
 
 const Hello = (props: HelloProps) => {
+    const TestComponent = Kimserver.Web2.web2Button.default; 
+    const darkModeSwap = () => {
+        const htmlDom = document.querySelector('html');
+        if(htmlDom!.dataset.theme == 'dark'){
+            htmlDom!.dataset.theme = ""
+        }else {
+            htmlDom!.dataset.theme = "dark"
+        }
+    }
     test();
     return (
         <div className="hello_class">
             Hello {props.compiler}, and
             {props.framework} 안녕하세요 게임끝sss
             <div className="hello2-text">불필요한거 삭제 했음</div>
+            <button onClick = {darkModeSwap}>스왑버튼</button>
             <Hello2 />
+            
             <JsComponent />
             <Canvas howMany={4} UserDatas={users} />
+
+            <TestComponent />
         </div>
     );
 };

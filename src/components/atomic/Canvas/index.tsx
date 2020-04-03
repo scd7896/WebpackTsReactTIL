@@ -8,18 +8,18 @@ const Canvas = (props: CanvasProps) => {
         const canvasDom: HTMLCanvasElement = document.getElementById("canvas_test") as HTMLCanvasElement;
         const ctx = canvasDom.getContext("2d");
         const resizeCtx = () => {
-            ctx.canvas.width = window.innerWidth;
+            ctx!.canvas.width = window.innerWidth;
             UserDatas.map((UserData : UserData)=>{
                 const first = UserData.counts[0]
-                ctx.moveTo(10, 300-first);
-                ctx.strokeStyle="#"+Math.round( Math.random() * 0xFFFFFF ).toString(16);
+                ctx!.moveTo(10, 300-first);
+                ctx!.strokeStyle="#"+Math.round( Math.random() * 0xFFFFFF ).toString(16);
                 UserData.counts.map((count : number, index: number)=>{
                     console.log(count)
-                    ctx.lineTo((index*60)+10, 300-count);
-                    ctx.arc((index*60)+10, 300-count,1,0,2*Math.PI, false);
+                    ctx!.lineTo((index*60)+10, 300-count);
+                    ctx!.arc((index*60)+10, 300-count,1,0,2*Math.PI, false);
                     
                 })
-                ctx.stroke();
+                ctx!.stroke();
             })
         };
         resizeCtx();
