@@ -12,7 +12,7 @@ var obj = files.reduce((o, val)=> {
 module.exports = {
     mode: "development", devtool: "inline-source-map",
     entry: {
-        "client": "./src/client.tsx"
+        "client": "./src/cleint_no_spliting.tsx"
     },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".css", ".scss"]

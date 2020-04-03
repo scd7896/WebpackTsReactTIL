@@ -1,10 +1,9 @@
 import { Route, Switch } from 'react-router-dom'
 import Helmet from 'react-helmet';
 import * as React from 'react'
-import loadable from '@loadable/component';
 import './app.scss';
-const Test = loadable(() => import('./test'));
-const Test2 = loadable(() => import('./test2'));
+import Test from './test';
+import Test2 from './test2';
 
 const App = () => {
     return(
