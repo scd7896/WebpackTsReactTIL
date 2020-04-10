@@ -4,6 +4,7 @@ import Hello2 from "./Hello2";
 import JsComponent from "./JsComponent";
 import Canvas from "./Canvas";
 import { HelloProps, UserData } from "../../model/parent";
+import GoogleLogin from '../atomic/GoogleLogin'
 import "./Hello.scss";
 import { test } from "./JsComponent/test.js";
 
@@ -35,6 +36,7 @@ const Hello = (props: HelloProps) => {
             {props.framework} 안녕하세요 게임끝sss
             <div className="hello2-text">불필요한거 삭제 했음</div>
             <button onClick = {darkModeSwap}>스왑버튼</button>
+            <GoogleLogin />
             <Hello2 />
             
             <JsComponent />
